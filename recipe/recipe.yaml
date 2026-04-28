@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: modelsearch
-  version: '1.2'
+  version: 1.3.1
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/modelsearch-${{ version }}.tar.gz
-  sha256: c150eb8bc0317fd5e656eb54f3b6809da313588a9998796a4e59a1cfed273ee7
+  sha256: f3b2e304dbef9f7c838423f591cfe0c60f4cef584bae8793d2aa8ac35a3c46e0
 
 build:
   number: 0
@@ -26,9 +26,7 @@ requirements:
   run:
     - python >=${{ python_min }},<4.0
     - django >=4.2
-    - django-tasks >=0.7,<0.12
-    - elasticsearch
-    - opensearch-py
+    - django-tasks >=0.7,<0.13
 tests:
   - python:
       imports:
